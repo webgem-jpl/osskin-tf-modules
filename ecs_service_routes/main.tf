@@ -28,7 +28,7 @@ resource "aws_route53_record" "internal_api" {
 }
 
 module "private_alb_ingress" {
-  source            = "git::https://gitlab.com/Caboma/E-Form/Backend/osskin-tf-modules/alb_ingress.git?ref=tags/0.1.0"
+  source            = "git::https://github.com/webgem-jpl/osskin-tf-modules/osskin-tf-modules/alb_ingress.git?ref=tags/0.1.1"
   enabled           = "${var.private_alb_listener_arns_count == 0 ? false : true}"
   name              = var.name
   namespace         = var.namespace
@@ -47,7 +47,7 @@ module "private_alb_ingress" {
 }
 
 module "public_alb_ingress" {
-  source            = "git::https://gitlab.com/Caboma/E-Form/Backend/osskin-tf-modules/alb_ingress.git?ref=tags/0.1.0"
+  source            = "git::https://github.com/webgem-jpl/osskin-tf-modules/osskin-tf-modules/alb_ingress.git?ref=tags/0.1.1"
   enabled           = "${var.public_alb_listener_arns_count > 0 ? true : false}"
   name              = var.name
   namespace         = var.namespace

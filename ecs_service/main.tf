@@ -7,7 +7,7 @@ module "default_label" {
 }
 
 module "ecr" {
-  source     = "git::https://gitlab.com/Caboma/E-Form/Backend/osskin-tf-modules/ecr.git?ref=tags/0.1.0"
+  source     = "git::https://github.com/webgem-jpl/osskin-tf-modules/osskin-tf-modules/ecr.git?ref=tags/0.1.1"
   name       = var.name
   namespace  = var.namespace
   stage      = var.stage
@@ -39,7 +39,7 @@ module "container_definition" {
 }
 
 module "ecs_alb_service_task" {
-  source                            = "git::https://gitlab.com/Caboma/E-Form/Backend/osskin-tf-modules/ecs_alb_service_task.git?ref=tags/0.1.0"
+  source                            = "git::https://github.com/webgem-jpl/osskin-tf-modules/osskin-tf-modules/ecs_alb_service_task.git?ref=tags/0.1.1"
   name                              = var.name
   namespace                         = var.namespace
   stage                             = var.stage
@@ -62,7 +62,7 @@ module "ecs_alb_service_task" {
 
 module "autoscaling" {
   enabled               = var.autoscaling_enabled
-  source                = "git::https://github.com/cloudposse/terraform-aws-ecs-cloudwatch-autoscaling.git?ref=tags/0.1.0"
+  source                = "git::https://github.com/cloudposse/terraform-aws-ecs-cloudwatch-autoscaling.git?ref=tags/0.1.1"
   name                  = var.name
   namespace             = var.namespace
   stage                 = var.stage
@@ -85,7 +85,7 @@ locals {
 }
 
 module "ecs_alarms" {
-  source     = "git::https://gitlab.com/Caboma/E-Form/Backend/osskin-tf-modules/ecs-cloudwatch-sns-alarms.git?ref=tags/0.1.0"
+  source     = "git::https://github.com/webgem-jpl/osskin-tf-modules/osskin-tf-modules/ecs-cloudwatch-sns-alarms.git?ref=tags/0.1.1"
   name       = var.name
   namespace  = var.namespace
   stage      = var.stage

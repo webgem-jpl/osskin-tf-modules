@@ -39,7 +39,7 @@ module "acm_request_certificate" {
 }
 
 module "public_alb" {
-  source                    = "git::https://gitlab.com/Caboma/E-Form/Backend/osskin-tf-modules/terraform-aws-vpc.git?ref=tags/0.1.0"
+  source                    = "git::https://github.com/webgem-jpl/osskin-tf-modules/osskin-tf-modules/terraform-aws-vpc.git?ref=tags/0.1.1"
   namespace                 = var.namespace
   stage                     = var.stage
   name                      = "public"
@@ -51,7 +51,7 @@ module "public_alb" {
 }
 
 module "private_alb" {
-  source                    = "git::https://gitlab.com/Caboma/E-Form/Backend/osskin-tf-modules/terraform-aws-vpc.git?ref=tags/0.1.0"
+  source                    = "git::https://github.com/webgem-jpl/osskin-tf-modules/osskin-tf-modules/terraform-aws-vpc.git?ref=tags/0.1.1"
   namespace                 = var.namespace
   stage                     = var.stage
   name                      = "private"
